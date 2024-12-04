@@ -1,0 +1,27 @@
+image_generator:
+  max_num_ips: 4
+  num_vision_tokens: 16
+  num_dummy_tokens: 16
+  max_num_dialogs: 8
+
+resampler:
+  dim: 1280
+  depth: 4
+  dim_head: 64
+  heads: 20
+  ff_mult: 4
+
+agent:
+  input_resampler: 
+    grid_size: 8
+    embed_dim: 5120
+    num_heads: 32
+    kv_dim: 2048
+  output_resampler:
+    grid_size: 8
+    embed_dim: 2048
+    num_heads: 32
+    kv_dim: 5120
+  mse: True
+  lm_loss_scale: 1.0
+  rec_loss_scale: 6.0
