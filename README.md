@@ -46,7 +46,7 @@
 
 ## 🎉 News
 
-- [2024-6-28] Inference code, training code, and checkpoints are released!
+- [2024-12-10] Checkpoint, dataset, and inference code are released!
 
 ## 📖 TL;DR
 
@@ -70,96 +70,45 @@ pip install -r requirements.txt
 pip install gradio-image-prompter
 ```
 
+### Model Download
 
-### Pre-trained Model Preparation
-
-We use [Zeroscope](https://huggingface.co/cerspense/zeroscope_v2_576w) and [LaVie-base](https://huggingface.co/Vchitect/LaVie) for the base T2V models. Please download Zeroscope from the [official huggingface page](https://huggingface.co/cerspense/zeroscope_v2_576w). For LaVie, we provide a script to convert their original checkpoint into the format that is suitable for Diffusers. Please download the [LaVie-base](https://huggingface.co/Vchitect/LaVie) model and the [Stable-Diffusion-v1.4](https://huggingface.co/CompVis/stable-diffusion-v1-4) checkpoint.
-
-Then, organize the pre-trained models in the `checkpoints` folder.
+Download our DiffSensei model from [huggingface](https://huggingface.co/jianzongwu/DiffSensei) and place it in the `checkpoints` folder like this:
 
 ```
 checkpoints
-  |- zeroscope_v2_576w
-  |- stable-diffusion-v1-4
-  |- lavie_base.pt
+  |- diffsensei
+    |- image_generator
+      |- ...
+    |- mllm
+      |- ...
 ```
-
-Then, run the following command to convert the checkpoint
-
-``` bash
-python -m scripts.convert_ckpts.convert_lavie_to_diffusers
-``` 
-
-Then, rename the `stable-diffusion-v1-4` folder to `lavie`. Additionally, you should replace the config file to LaVie's configs, following [checkpoint guide](docs/checkpoints.md).
-
-The final checkpoint folder looks like this:
-
-```
-checkpoints
-  |- zeroscope_v2_576w
-  |- lavie
-  |- lavie_base.pt (Not used anymore)
-```
-
-We use the converted lavie model for all the experiments.
 
 
 ### Inference with Gradio
 
-For quick inference and re-producing the examples in paper, please download our trained customized checkpoints for the target subjects in [huggingface](https://huggingface.co/jianzongwu/MotionBooth). The names of the checkpoints correspond to the subject names in the MotionBooth dataset.
+We provide gradio demo for inferencing DiffSensei.
 
-Please place the checkpoints in che `checkpoints` folder like this:
-
-```
-checkpoints
-  |- customized
-    |- zeroscope
-      |- ...
-    |- lavie
-      |- ...
-  |- zeroscope_v2_576w
-  |- lavie
-  |- lavie_base.pt (Not used anymore)
+``` bash
+CUDA_VISIBLE_DEVICES=0 \
+python -m scripts.demo.gradio \
+  --config_path configs/model/diffsensei.yaml \
+  --inference_config_path configs/inference/diffsensei.yaml \
+  --ckpt_path checkpoints/diffsensei
 ```
 
-We use simple script files to indicate the subject and camera motion. We provide several examples in `data/scripts`. In these script files, the "bbox" controls the bounding box sequence for the subjects' motion, while the "camera speed" controls the corresponding camera motion speed.
+*Please be patient. Try more prompts, characters, and random seeds, and download your favored manga panels!* 🤗
 
-We provide the inference script in `scripts/inference.py` for all types of MotionBooth applications. It uses [Accelerate PartialState](https://huggingface.co/docs/accelerate/index) to support multi GPU inference.
+### The MangaZero Dataset
 
-### MangaZero Data Download
+For license issues, we cannot directly share the images. Instead, we provide the manga image urls (in MangaDex) and annotations of our MangaZero dataset.
+Note that the released version of MangaZero is about 3/4 of the full dataset used for training. The missing images is because some urls are not available. For similar usage for manga data, we strongly encourage everyone who is interested to collect their dataset freely from MangaDex, following the instruction of [MangaDex API](https://api.mangadex.org/docs/).
 
-We collect 26 objects from [DreamBooth](https://dreambooth.github.io/) and [CustomDiffusion](https://github.com/adobe-research/custom-diffusion) to perform the experiments in paper. These objects include pets, plushies, toys, cartoons, and vehicles. We also annotate masks for each image. We name it the MotionBooth dataset. Please download our dataset from [huggingface](https://huggingface.co/datasets/jianzongwu/MotionBooth).
+Please download MangaZero from [Huggingface](https://huggingface.co/datasets/jianzongwu/MangaZero).
 
-Note that a few images from the original datasets are deleted because the low quality of the obtained masks. Additionally, a few images are resized and cropped to square shapes.
+After downloading the annotation file, please run `scripts/dataset/download_mangazero.py` to download and organize the images.
 
-After downloading, please unzip and place the dataset under the `data` folder. It should look like this:
-
-```
-data
-  |- MotionBooth
-    |- images
-      |- cat2
-      |- ...
-    |- masks
-      |- cat2
-      |- ...
-  |- scripts
-```
-
-
-
-
-## 📢 Disclaimer
-
-Please try more samples under different random seeds to have better results. 🤗
 
 ## Citation
 
 ```
-article{wu2024motionbooth,
-  title={MotionBooth: Motion-Aware Customized Text-to-Video Generation},
-  author={Jianzong Wu and Xiangtai Li and Yanhong Zeng and Jiangning Zhang and Qianyu Zhou and Yining Li and Yunhai Tong and Kai Chen},
-  journal={NeurIPS},
-  year={2024},
-}
 ```

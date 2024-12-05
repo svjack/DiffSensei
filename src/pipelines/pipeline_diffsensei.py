@@ -24,7 +24,8 @@ from transformers import (
     CLIPTokenizer,
     CLIPVisionModelWithProjection,
     ViTImageProcessor,
-    ViTMAEModel
+    ViTMAEModel,
+    LlamaTokenizer
 )
 
 from diffusers.image_processor import PipelineImageInput
@@ -35,6 +36,7 @@ from diffusers.pipelines.stable_diffusion_xl.pipeline_stable_diffusion_xl import
 
 from src.models.unet import UNetMangaModel
 from src.models.resampler import Resampler
+from src.models.mllm.seed_x import ContinuousLVLM
 
 
 class DiffSenseiPipeline(StableDiffusionXLPipeline):
@@ -195,7 +197,6 @@ class DiffSenseiPipeline(StableDiffusionXLPipeline):
         # manga conditions
         ip_images: Optional[PipelineImageInput] = [],
         ip_image_embeds: Optional[torch.Tensor] = None,
-        context_image: Optional[PipelineImageInput] = None,
         ip_bbox: Optional[List[List[float]]] = [],
         ip_scale: Optional[int] = 1.0,
         dialog_bbox: Optional[List[List[float]]] = [],

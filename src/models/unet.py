@@ -206,7 +206,7 @@ class UNetMangaModel(UNet2DConditionModel):
         sample = self.conv_in(sample)
 
         # 2.5 add dialog bbox embedding
-        if self.config.dialog_bbox_encode_type == 'mask' and dialog_bbox is not None:
+        if dialog_bbox is not None:
             sample = self.encode_dialog_bbox(sample, dialog_bbox)
 
         # 3. down
