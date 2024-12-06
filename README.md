@@ -1,56 +1,38 @@
-<br />
-<p align="center">
-  <h1 align="center">MotionBooth: Motion-Aware Customized <br> Text-to-Video Generation</h1>
-  <p align="center">
-    <br />
-    <a href="https://jianzongwu.github.io/"><strong>Jianzong Wu</strong></a>
-    ·
-    <a href="https://lxtgh.github.io/"><strong>Xiangtai Li</strong></a>
-    ·
-    <a href="https://zengyh1900.github.io/"><strong>Yanhong Zeng</strong></a>
-    ·
-    <a href="https://zhangzjn.github.io/"><strong>Jiangning Zhang</strong></a>
-    .
-    <a href="https://qianyuzqy.github.io/"><strong>Qianyu Zhou</strong></a>
-    .
-    <a href="https://github.com/ly015"><strong>Yining Li</strong></a>
-    ·
-    <a href="https://scholar.google.com/citations?user=T4gqdPkAAAAJ"><strong>Yunhai Tong</strong></a>
-    .
-    <a href="https://chenkai.site/"><strong>Kai Chen</strong></a>
-  </p>
+# DiffSensei: Bridging Multi-Modal LLMs and Diffusion Models <br> for Customized Manga Generation
 
-  <p align="center">
-    <a href='https://arxiv.org/abs/2406.17758'>
-      <img src='https://img.shields.io/badge/Paper-PDF-green?style=flat&logo=arXiv&logoColor=green' alt='arXiv PDF'>
-    </a>
-    <a href='https://github.com/jianzongwu/MotionBooth'>
-      <img src='https://img.shields.io/badge/Github-Code-blue?style=flat&logo=Github' alt='Code'>
-    </a>
-    <a href='https://jianzongwu.github.io/projects/motionbooth'>
-      <img src='https://img.shields.io/badge/Project-Page-blue?style=flat&logo=webpack' alt='Project Page'>
-    </a>
-  </p>
-<br />
+<div align="center">
 
-## Examples
+[![arXiv (Coming Soon)](https://img.shields.io/badge/arXiv-2410.08261-b31b1b.svg)](TODO)
+[![Project Page](https://img.shields.io/badge/Project-Page-blue?logo=github-pages)](https://jianzongwu.github.io/projects/diffsensei)
+[![Video](https://img.shields.io/badge/YouTube-FF0000?logo=youtube)](https://www.youtube.com/watch?v=TLJ0MYZmoXc&source_ve_path=OTY3MTQ)
+[![Demo](https://img.shields.io/badge/Huggingface-Demo-blue?logo=huggingface)](https://huggingface.co/spaces/jianzongwu/DiffSensei)
+[![Checkpoint](https://img.shields.io/badge/🤗%20Huggingface-Model-yellow)](https://huggingface.co/jianzongwu/DiffSensei)
+[![Dataset](https://img.shields.io/badge/🤗%20Huggingface-Dataset-yellow)](https://huggingface.co/datasets/jianzongwu/MangaZero)
 
-**Customization and subject motion control**
 
-<img src="assets/demo1.gif" width="600">
+</div>
 
-**Hybrid control on customization, subject and camera motion**
+![Page results](assets/images/results_page/1.png)
 
-<img src="assets/demo2.gif" width="600">
+#### A story about LeCun, Hinton, and Benjio winning the Novel Prize...
+
+![Long story](assets/images/nobel_prize/image.png)
+
+## 🚀 TL;DR
+
+DiffSensei can generate vivid black-and-white manga panels with precise character and dialog layout control.
+
+![](assets/images/model_architecture.png)
+
+**Key Features:**
+- 🌟 Varied-resolution manga panel generation (64-2048 edge size!)
+- 🖼️ One input character image, create various appearances
+- ✨ Versatile applications: customized manga generation, real human manga creation
 
 
 ## 🎉 News
 
-- [2024-12-10] Checkpoint, dataset, and inference code are released!
-
-## 📖 TL;DR
-
-DiffSensei can generate vivid black-and-white manga panels with precise character and dialog layout control!
+- [2024-12-10] Checkpoint, dataset, and inference code are released
 
 ## 🛠️ Quick Start
 
@@ -96,7 +78,7 @@ python -m scripts.demo.gradio \
   --ckpt_path checkpoints/diffsensei
 ```
 
-*Please be patient. Try more prompts, characters, and random seeds, and download your favored manga panels!* 🤗
+Please be patient. Try more prompts, characters, and random seeds, and download your favored manga panels! 🤗
 
 ### The MangaZero Dataset
 
@@ -105,8 +87,14 @@ Note that the released version of MangaZero is about 3/4 of the full dataset use
 
 Please download MangaZero from [Huggingface](https://huggingface.co/datasets/jianzongwu/MangaZero).
 
-After downloading the annotation file, please run `scripts/dataset/download_mangazero.py` to download and organize the images.
+After downloading the annotation file, please place the annotation file in `data/mangazero/annotations.json` and run `scripts/dataset/download_mangazero.py` to download and organize the images.
 
+
+``` bash
+python -m scripts.dataset.download_mangazero \
+  --ann_path data/mangazero/annotations.json \
+  --output_image_root data/mangazero/images
+```
 
 ## Citation
 
