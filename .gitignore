@@ -181,7 +181,6 @@ wandb
 # ours
 nohup*
 checkpoints
-results*
 outputs*
 data
 tmp

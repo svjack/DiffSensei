@@ -14,7 +14,7 @@
 
 ![Page results](assets/images/results_page/1.png)
 
-#### A story about LeCun, Hinton, and Benjio winning the Novel Prize...
+### A story about LeCun, Hinton, and Benjio winning the Novel Prize...
 
 ![Long story](assets/images/nobel_prize/image.png)
 
