@@ -4,7 +4,7 @@
 
 [![arXiv (Coming Soon)](https://img.shields.io/badge/arXiv-2410.08261-b31b1b.svg)](TODO)
 [![Project Page](https://img.shields.io/badge/Project-Page-blue?logo=github-pages)](https://jianzongwu.github.io/projects/diffsensei)
-[![Video](https://img.shields.io/badge/YouTube-FF0000?logo=youtube)](https://www.youtube.com/watch?v=TLJ0MYZmoXc&source_ve_path=OTY3MTQ)
+[![Video](https://img.shields.io/badge/YouTube-Video-FF0000?logo=youtube)](https://www.youtube.com/watch?v=TLJ0MYZmoXc&source_ve_path=OTY3MTQ)
 [![Demo](https://img.shields.io/badge/Huggingface-Demo-blue?logo=huggingface)](https://huggingface.co/spaces/jianzongwu/DiffSensei)
 [![Checkpoint](https://img.shields.io/badge/🤗%20Huggingface-Model-yellow)](https://huggingface.co/jianzongwu/DiffSensei)
 [![Dataset](https://img.shields.io/badge/🤗%20Huggingface-Dataset-yellow)](https://huggingface.co/datasets/jianzongwu/MangaZero)
@@ -16,9 +16,7 @@
 
 ![Page results2](assets/images/results_page/2.png)
 
-![Page results3](assets/images/results_page/3.png)
-
-![Page results4](assets/images/results_page/4.png)
+More demos are in our [project page](https://jianzongwu.github.io/projects/diffsensei).
 
 ### A story about LeCun, Hinton, and Benjio winning the Novel Prize...
 
@@ -110,7 +108,7 @@ python -m scripts.dataset.download_mangazero \
 
 
 <p align="center">
-  <a href="https://star-history.com/#viiika/Meissonic&Date">
+  <a href="https://star-history.com/#jianzongwu/DiffSensei&Date">
     <img src="https://api.star-history.com/svg?repos=jianzongwu/DiffSensei&type=Date" alt="Star History Chart">
   </a>
 </p>
