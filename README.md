@@ -24,7 +24,7 @@ More demos are in our [project page](https://jianzongwu.github.io/projects/diffs
 
 ## 🚀 TL;DR
 
-DiffSensei can generate vivid black-and-white manga panels with precise character and dialog layout control.
+DiffSensei can generate controllable black-and-white manga panels with flexible character adaptation.
 
 ![](assets/images/model_architecture.png)
 
