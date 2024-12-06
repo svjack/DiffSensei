@@ -1,4 +1,4 @@
-# DiffSensei: Bridging Multi-Modal LLMs and Diffusion Models <br> for Customized Manga Generation
+# DiffSensei: Bridging Multi-Modal LLMs and Diffusion Models for Customized Manga Generation
 
 <div align="center">
 
@@ -12,7 +12,13 @@
 
 </div>
 
-![Page results](assets/images/results_page/1.png)
+![Page results1](assets/images/results_page/1.png)
+
+![Page results2](assets/images/results_page/2.png)
+
+![Page results3](assets/images/results_page/3.png)
+
+![Page results4](assets/images/results_page/4.png)
 
 ### A story about LeCun, Hinton, and Benjio winning the Novel Prize...
 
@@ -100,3 +106,11 @@ python -m scripts.dataset.download_mangazero \
 
 ```
 ```
+
+
+
+<p align="center">
+  <a href="https://star-history.com/#viiika/Meissonic&Date">
+    <img src="https://api.star-history.com/svg?repos=jianzongwu/DiffSensei&type=Date" alt="Star History Chart">
+  </a>
+</p>
