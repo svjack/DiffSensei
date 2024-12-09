@@ -5,7 +5,6 @@
 [![arXiv (Coming Soon)](https://img.shields.io/badge/arXiv-2410.08261-b31b1b.svg)](TODO)
 [![Project Page](https://img.shields.io/badge/Project-Page-blue?logo=github-pages)](https://jianzongwu.github.io/projects/diffsensei)
 [![Video](https://img.shields.io/badge/YouTube-Video-FF0000?logo=youtube)](https://www.youtube.com/watch?v=TLJ0MYZmoXc&source_ve_path=OTY3MTQ)
-[![Demo](https://img.shields.io/badge/Huggingface-Demo-blue?logo=huggingface)](https://huggingface.co/spaces/jianzongwu/DiffSensei)
 [![Checkpoint](https://img.shields.io/badge/🤗%20Huggingface-Model-yellow)](https://huggingface.co/jianzongwu/DiffSensei)
 [![Dataset](https://img.shields.io/badge/🤗%20Huggingface-Dataset-yellow)](https://huggingface.co/datasets/jianzongwu/MangaZero)
 
