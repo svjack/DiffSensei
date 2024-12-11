@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![arXiv (Coming Soon)](https://img.shields.io/badge/arXiv-2410.08261-b31b1b.svg)](TODO)
+[![arXiv](https://img.shields.io/badge/arXiv-2410.08261-b31b1b.svg)](https://arxiv.org/abs/2412.07589)
 [![Project Page](https://img.shields.io/badge/Project-Page-blue?logo=github-pages)](https://jianzongwu.github.io/projects/diffsensei)
 [![Video](https://img.shields.io/badge/YouTube-Video-FF0000?logo=youtube)](https://www.youtube.com/watch?v=TLJ0MYZmoXc&source_ve_path=OTY3MTQ)
 [![Checkpoint](https://img.shields.io/badge/🤗%20Huggingface-Model-yellow)](https://huggingface.co/jianzongwu/DiffSensei)
@@ -10,6 +10,8 @@
 
 
 </div>
+
+![Page results caption1](assets/images/results_page/caption1.png)
 
 ![Page results1](assets/images/results_page/1.png)
 
@@ -102,6 +104,12 @@ python -m scripts.dataset.download_mangazero \
 ## Citation
 
 ```
+article{wu2024diffsensei,
+  title={DiffSensei: Bridging Multi-Modal LLMs and Diffusion Models for Customized Manga Generation},
+  author={Jianzong Wu, Chao Tang, Jingbo Wang, Yanhong Zeng, Xiangtai Li, and Yunhai Tong},
+  journal={arXiv preprint arXiv:2412.07589},
+  year={2024},
+}
 ```
 
 
