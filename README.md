@@ -37,7 +37,8 @@ DiffSensei can generate controllable black-and-white manga panels with flexible 
 
 ## 🎉 News
 
-- [2024-12-10] Checkpoint, dataset, and inference code are released
+- [2024-12-13] A new version of gradio demo without MLLM is released (Much fewer memory usage)!
+- [2024-12-10] Checkpoint, dataset, and inference code are released!
 
 ## 🛠️ Quick Start
 
@@ -61,6 +62,8 @@ pip install gradio-image-prompter
 
 Download our DiffSensei model from [huggingface](https://huggingface.co/jianzongwu/DiffSensei) and place it in the `checkpoints` folder like this:
 
+If you plan not to use the MLLM component, you can download the model without the MLLM component and use the `gradio_wo_mllm.py` to produce your results.
+
 ```
 checkpoints
   |- diffsensei
@@ -78,6 +81,16 @@ We provide gradio demo for inferencing DiffSensei.
 ``` bash
 CUDA_VISIBLE_DEVICES=0 \
 python -m scripts.demo.gradio \
+  --config_path configs/model/diffsensei.yaml \
+  --inference_config_path configs/inference/diffsensei.yaml \
+  --ckpt_path checkpoints/diffsensei
+```
+
+We also offer a version without MLLM, designed for lower memory usage. If you choose this version, you can skip downloading the MLLM component in the checkpoint, significantly reducing memory consumption. (Can be run on a single 24GB 4090 GPU with batch-size=1 for small or medium panel sizes). While this version may have slightly reduced text compatibility, the overall quality remains largely unaffected.
+
+``` bash
+CUDA_VISIBLE_DEVICES=0 \
+python -m scripts.demo.gradio_wo_mllm \
   --config_path configs/model/diffsensei.yaml \
   --inference_config_path configs/inference/diffsensei.yaml \
   --ckpt_path checkpoints/diffsensei
