@@ -54,9 +54,12 @@ pip install ipykernel
 python -m ipykernel install --user --name diffsensei --display-name "diffsensei"
 
 # Install Pytorch and Diffusers related packages
-conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
-conda install -c conda-forge diffusers transformers accelerate
-pip3 install -U xformers --index-url https://download.pytorch.org/whl/cu121
+#conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+#conda install -c conda-forge diffusers transformers accelerate
+#pip3 install -U xformers --index-url https://download.pytorch.org/whl/cu121
+
+pip install torch torchvision torchaudio diffusers transformers accelerate xformers
+
 # Install other dependencies
 pip install -r requirements.txt
 # Third-party repo for running the gradio demo
