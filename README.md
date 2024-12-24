@@ -65,6 +65,12 @@ git clone https://github.com/svjack/DiffSensei && cd DiffSensei
 pip install -r requirements.txt
 # Third-party repo for running the gradio demo
 pip install gradio-image-prompter
+
+pip install "httpx[socks]"
+
+git clone https://huggingface.co/jianzongwu/DiffSensei
+mkdir checkpoints
+cp -r DiffSensei checkpoints/diffsensei
 ```
 
 ### Model Download
