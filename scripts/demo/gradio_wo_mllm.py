@@ -281,7 +281,7 @@ def main(args):
             outputs=generated_images,
         )
 
-    demo.launch()
+    demo.launch(share = True)
 
 
 if __name__ == "__main__":
