@@ -61,6 +61,7 @@ python -m ipykernel install --user --name diffsensei --display-name "diffsensei"
 pip install torch torchvision torchaudio diffusers transformers accelerate xformers
 
 # Install other dependencies
+git clone https://github.com/svjack/DiffSensei && cd DiffSensei
 pip install -r requirements.txt
 # Third-party repo for running the gradio demo
 pip install gradio-image-prompter
