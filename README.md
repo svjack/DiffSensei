@@ -45,9 +45,14 @@ DiffSensei can generate controllable black-and-white manga panels with flexible 
 ### Installation
 
 ``` bash
+sudo apt-get update && sudo apt-get install cbm git-lfs ffmpeg
+
 # Create a new environment with Conda
 conda create -n diffsensei python=3.11
 conda activate diffsensei
+pip install ipykernel
+python -m ipykernel install --user --name diffsensei --display-name "diffsensei"
+
 # Install Pytorch and Diffusers related packages
 conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
 conda install -c conda-forge diffusers transformers accelerate
